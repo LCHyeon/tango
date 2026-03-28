@@ -3,6 +3,7 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
@@ -55,6 +56,10 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -88,6 +93,44 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* === BASE === */
+  --background: #F8FAF8;
+  --foreground: #1A1A1A;
+
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+
+  /* === PRIMARY (메인 초록) === */
+  --primary: #1A6E3D;
+  --primary-foreground: #FFFFFF;
+
+  /* === SECONDARY (부드러운 초록 배경) === */
+  --secondary: #ECFFE3;
+  --secondary-foreground: #1A6E3D;
+
+  /* === ACCENT (중간 초록) === */
+  --accent: #9ECD87;
+  --accent-foreground: #1A6E3D;
+
+  /* === MUTED === */
+  --muted: #F1F5F1;
+  --muted-foreground: #6B7280;
+
+  /* === BORDER / INPUT === */
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+
+  /* === RING === */
+  --ring: #7DBA5F;
+
+  /* === DESTRUCTIVE === */
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --radius: 0.625rem;
 }
 
 .dark {
@@ -122,6 +165,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+   
 }
 
 @layer base {

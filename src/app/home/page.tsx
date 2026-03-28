@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "@tanstack/react-router";
+import { ROUTES } from "@/constants/route";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const HomePage = () => {
 
             <Button
               className="w-full"
-              onClick={() => navigate({ to: "/words" })}
+              onClick={() => navigate({ to: ROUTES.Word })}
             >
               단어장 보기
             </Button>
@@ -47,7 +48,7 @@ const HomePage = () => {
             <Button
               variant="secondary"
               className="w-full"
-              onClick={() => navigate({ to: "/test" })}
+              onClick={() => navigate({ to: ROUTES.Test })}
             >
               테스트 시작
             </Button>
