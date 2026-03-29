@@ -11,8 +11,8 @@ const WordPage = () => {
       <h2 className="text-xl font-bold text-foreground">단어장</h2>
 
       {Object.entries(WORDS).map(([level, data]) => {
-        const total = Object.values(data.units).flat().length;
-
+        const total = data.words.length;
+        
         return (
           <LevelCard
             key={level}

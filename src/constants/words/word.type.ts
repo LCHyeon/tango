@@ -7,5 +7,5 @@ export type Word = {
 };
 
 export type LevelWords = {
-  units: Record<string, Word[]>;
+  words: Word[];
 };
