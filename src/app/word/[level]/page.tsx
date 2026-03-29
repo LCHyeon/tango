@@ -14,9 +14,7 @@ const WordLevelPage = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <h2 className="text-xl font-bold text-foreground">
-        {level} 단어장
-      </h2>
+      <h2 className="text-xl font-bold text-foreground">{level} 단어장</h2>
 
       {units.map((unitWords, index) => (
         <div
@@ -25,7 +23,6 @@ const WordLevelPage = () => {
             p-5 border border-border rounded-xl bg-card
             cursor-pointer flex justify-between items-center
             transition-all duration-200
-            hover:bg-secondary hover:border-primary
             hover:-translate-y-0.5 hover:shadow-md
           "
           onClick={() =>

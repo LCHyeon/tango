@@ -23,8 +23,7 @@ const LevelCard = ({ level, total, learned, onClick }: Props) => {
       onClick={onClick}
       className="
         rounded-2xl cursor-pointer transition-all duration-200
-        bg-card hover:bg-secondary hover:border-primary
-        hover:-translate-y-0.5 hover:shadow-md
+        bg-card hover:-translate-y-0.5 hover:shadow-md
       "
     >
       <CardContent className="p-5 flex flex-col gap-3">
