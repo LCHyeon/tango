@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <header className="w-full border-b bg-background">
-        <div className="mx-auto flex max-w-md items-center justify-between px-5 py-4 relative">
+        <div className="mx-auto flex max-w-md items-center justify-between px-5 py-2 relative">
           <div className="relative">
             <Button
               variant="ghost"

@@ -1,18 +1,35 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useNavigate } from "@tanstack/react-router";
 import { ROUTES } from "@/constants/route";
+
+import favicon from "@/assets/favicon.svg";
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="space-y-2">
-        <h2 className="text-xl font-bold">JLPT 단어 학습</h2>
-        <p className="text-sm text-neutral-600">
-          단어장을 보거나 암기 테스트를 시작하세요
-        </p>
+      <div className="space-y-3">
+        <div>
+          <h2 className="text-xl font-bold">JLPT 단어 학습</h2>
+          <p className="text-sm text-neutral-600">
+            단어장을 보거나 암기 테스트를 시작하세요
+          </p>
+        </div>
+
+        <div className="relative">
+          <img
+            src={favicon}
+            alt="search"
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 w-5 h-5 opacity-80"
+          />
+          <Input
+            placeholder="단어 검색 (예: 食べる)"
+            className="pl-12 h-11 rounded-xl"
+          />
+        </div>
       </div>
 
       <div className="flex flex-col gap-4">
