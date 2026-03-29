@@ -1,22 +1,51 @@
-import { ROUTES } from "@/constants/route";
-import { useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
+import { Menu, Moon, Sun } from "lucide-react";
 
-type HeaderProps = {
-  title?: string;
-};
+import { Button } from "@/components/ui/button";
+import MobileMenuOverlay from "./mobile-menu-overlay";
+import PcMenuPopup from "./pc-menu-popup";
 
-const Header = ({ title = "Tango" }: HeaderProps) => {
-  const navigate = useNavigate();
+const Header = () => {
+  const [isDark, setIsDark] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="w-full border-b bg-background">
-      <div
-        onClick={() => navigate({ to: ROUTES.Home })}
-        className="mx-auto max-w-md px-5 py-4 cursor-pointer"
-      >
-        <h1 className="text-lg font-semibold text-primary">{title}</h1>
-      </div>
-    </header>
+    <>
+      <header className="w-full border-b bg-background">
+        <div className="mx-auto flex max-w-md items-center justify-between px-5 py-4 relative">
+          <div className="relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+
+            <PcMenuPopup
+              isOpen={isMenuOpen}
+              onClose={() => setIsMenuOpen(false)}
+            />
+          </div>
+
+          <button
+            onClick={() => setIsDark((prev) => !prev)}
+            className="p-2 rounded-md hover:bg-muted transition"
+          >
+            {isDark ? (
+              <Sun className="h-5 w-5 cursor-pointer" />
+            ) : (
+              <Moon className="h-5 w-5 cursor-pointer" />
+            )}
+          </button>
+        </div>
+      </header>
+
+      <MobileMenuOverlay
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+      />
+    </>
   );
 };
 
